@@ -1,0 +1,3 @@
+spring事务AOP使用的是自动代理InfrastructureAdvisorAutoProxyCreator。
+相关自动代理的配置在  ProxyTransactionManagementConfiguration 类
+InfrastructureAdvisorAutoProxyCreator 会根据Advisor 的@Role(BeanDefinition.ROLE_INFRASTRUCTURE) 值来判断是否启用
