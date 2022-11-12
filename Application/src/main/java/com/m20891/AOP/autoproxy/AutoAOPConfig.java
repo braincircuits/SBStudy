@@ -6,12 +6,13 @@ import org.springframework.context.annotation.Role;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AOPConfig {
+public class AutoAOPConfig {
     @Bean(name = "abc00")
     @Role(BeanDefinition.ROLE_INFRASTRUCTURE)
     public MyAdvisor advisor(MyMethodInterceptor interceptor) {
         MyAdvisor myAdvisor = new MyAdvisor();
         myAdvisor.setAdvice(interceptor);
+        myAdvisor.setOrder(1001);
         return myAdvisor;
     }
 }

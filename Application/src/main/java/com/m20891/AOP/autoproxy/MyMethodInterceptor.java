@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 public class MyMethodInterceptor implements MethodInterceptor {
     @Override
     public Object invoke(MethodInvocation invocation) throws Throwable {
+        System.out.println(this);
         System.out.println("====");
         Object proceed = invocation.proceed();
         System.out.println("环绕");
